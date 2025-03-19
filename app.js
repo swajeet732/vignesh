@@ -11,6 +11,7 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const userRouter = require('./routes/users.routes');
 const bookRouter = require('./routes/books.routes');
+const rentRouter = require('./routes/rental.routes');
 
 // Initialize Express App
 const app = express();
@@ -45,6 +46,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/api', userRouter);
 app.use('/api', bookRouter);
+app.use('/api', rentRouter);
 
 // 404 Not Found Middleware
 app.use((req, res, next) => {

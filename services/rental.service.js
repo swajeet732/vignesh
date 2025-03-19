@@ -4,6 +4,8 @@ const Book = require('../models/books.model');
 // ✅ Rent a Book
 exports.rentBook = async (userId, bookId) => {
     const book = await Book.findById(bookId);
+    console.log(book,'book');
+    
     if (!book || book.isRented) throw new Error("Book is not available for rent");
 
     const existingRental = await Rental.findOne({ userId, returnedAt: null });
